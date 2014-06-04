@@ -70,8 +70,8 @@ private:
 	void incHorizontalDistance(double inc);
 
 public Q_SLOTS:
-	void on_actionAdd_Plugin_activated();
-	void on_actionNewSimulation_activated();
+    void on_actionAdd_Plugin_triggered();
+    void on_actionNewSimulation_triggered();
 	void on_actionSave_Simulation_activated();
 	void on_actionSave_as_activated();
 	void on_runButton_clicked();

@@ -243,7 +243,7 @@ void MainWindow::changeEvent(QEvent *e) {
 	}
 }
 
-void MainWindow::on_actionAdd_Plugin_activated() {
+void MainWindow::on_actionAdd_Plugin_triggered() {
         QString plugin = QFileDialog::getOpenFileName(this, "select plugin", ".", "*.so *.dll");
 	if (plugin == "")
 		return;
@@ -314,7 +314,7 @@ void MainWindow::on_stopButton_clicked() {
 	current_thread->getSimulation()->stop();
 }
 
-void MainWindow::on_actionNewSimulation_activated() {
+void MainWindow::on_actionNewSimulation_triggered() {
 	if (!unload()) {
 		return;
 	}

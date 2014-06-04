@@ -34,6 +34,7 @@ include_directories(src/cd3core)
 
 #include python scripting capabilites
 option(WITH_PYTHON "Include Python scripting capabilites" ON)
+set (WITH_PYTHON OFF)
 if (WITH_PYTHON)
 	find_package(PythonLibs REQUIRED)
 	find_package(SWIG REQUIRED)
@@ -82,7 +83,7 @@ if (WITH_PYTHON)
 endif()
 
 add_subdirectory(src/app)
-#add_subdirectory(src/gui)
+add_subdirectory(src/gui)
 #add_subdirectory(src/plugindoc)
 
 #option(WITH_PLUGINDOC "Build the plugindoc app" OFF)
@@ -90,13 +91,13 @@ add_subdirectory(src/app)
 #	add_subdirectory(src/plugindoc)
 #endif()
 
-option(WITH_TESTS "Enable unit testing" OFF)
+#option(WITH_TESTS "Enable unit testing" OFF)
 
-if (WITH_TESTS)
-	find_package(GTest REQUIRED)
-	message(STATUS "Tests enabled")
-	enable_testing(true)
-	add_subdirectory(src/tests)
-endif()
+#if (WITH_TESTS)
+#	find_package(GTest REQUIRED)
+#	message(STATUS "Tests enabled")
+#	enable_testing(true)
+#	add_subdirectory(src/tests)
+#endif()
 
 INCLUDE(Cd3CPack.txt)
