@@ -21,8 +21,10 @@
 #define TIMESTEPHANDLER_H
 
 #include <QObject>
-#include <boost/date_time.hpp>
 
+#ifndef Q_MOC_RUN
+#include <boost/date_time.hpp>
+#endif
 using namespace boost::posix_time;
 
 class ISimulation;
